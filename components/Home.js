@@ -1,17 +1,15 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
 
 const Home = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
-      {/* Botão para abrir o menu lateral */}
-     
-
       <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 20 }}>
-        {/* Seção 1: O que nós somos */}
         <View style={styles.section}>
           <Image
-            source={{ uri: 'https://images.unsplash.com/photo-1648737963503-1a26da876aca?auto=format&fit=crop&w=900&h=900&q=80' }}
+            source={{
+              uri: 'https://images.unsplash.com/photo-1648737963503-1a26da876aca?auto=format&fit=crop&w=900&h=900&q=80',
+            }}
             style={styles.image}
           />
           <View style={styles.textBlock}>
@@ -34,7 +32,6 @@ const Home = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Seção 2: Porque o Care.ly */}
         <View style={styles.section}>
           <Text style={styles.title}>Encontre propósito e pertencimento em cada ação</Text>
 
@@ -59,41 +56,6 @@ const Home = ({ navigation }) => {
             </Text>
           </View>
         </View>
-
-        {/* Seção 3: Colaboradores */}
-        <View style={styles.section}>
-          <Text style={styles.title}>Colaboradores</Text>
-          <Text style={styles.paragraph}>
-            Cada parceira passa por um processo de verificação para garantir que seu tempo e energia sejam bem investidos.
-          </Text>
-
-          {[
-            {
-              title: 'Mães Pela Vida',
-              description:
-                'Rede de apoio para mães solo em situação de vulnerabilidade, com oficinas profissionalizantes e auxílio psicológico.',
-              image: 'https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?auto=format&fit=crop&w=560&q=80',
-            },
-            {
-              title: 'Abraço Animal',
-              description:
-                'Centro de resgate e adoção responsável de cães e gatos, com foco em castração e campanhas educativas.',
-              image: 'https://images.unsplash.com/photo-1562851529-c370841f6536?auto=format&fit=crop&w=560&q=80',
-            },
-            {
-              title: 'Tecendo Futuro',
-              description:
-                'Projeto que oferece aulas de tecnologia e empreendedorismo para adolescentes de escolas públicas.',
-              image: 'https://images.unsplash.com/photo-1521321205814-9d673c65c167?auto=format&fit=crop&w=560&q=80',
-            },
-          ].map((partner, index) => (
-            <View key={index} style={styles.card}>
-              <Image source={{ uri: partner.image }} style={styles.cardImage} />
-              <Text style={styles.cardTitle}>{partner.title}</Text>
-              <Text style={styles.paragraph}>{partner.description}</Text>
-            </View>
-          ))}
-        </View>
       </ScrollView>
     </View>
   );
@@ -103,16 +65,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f3f4f6',
     paddingHorizontal: 16,
-  },
-  menuButton: {
-    padding: 12,
-    backgroundColor: '#2563eb',
-    alignItems: 'center',
-  },
-  menuButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
   section: {
     paddingVertical: 20,
@@ -149,7 +101,6 @@ const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 6,
     marginBottom: 4,
   },
   bullet: {
@@ -163,25 +114,6 @@ const styles = StyleSheet.create({
   },
   iconBlock: {
     marginTop: 16,
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 16,
-    elevation: 2,
-  },
-  cardImage: {
-    width: '100%',
-    height: 160,
-    borderRadius: 10,
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#1f2937',
-    marginTop: 10,
-    marginBottom: 6,
   },
 });
 
